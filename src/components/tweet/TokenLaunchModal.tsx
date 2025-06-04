@@ -142,8 +142,8 @@ export function TokenLaunchModal({ isOpen, onClose, tweet, onLaunch }: TokenLaun
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex min-h-full items-center justify-center p-4 text-center">
         <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
-        
-        <div className="relative w-full max-w-2xl transform rounded-2xl bg-gray-900 border border-gray-800/50 p-6 text-left shadow-xl transition-all">
+
+        <div className="relative w-full max-w-2xl transform rounded-2xl bg-gray-900/80 backdrop-blur-lg border border-gray-700 p-8 text-left shadow-2xl transition-all">
           {/* Modal Header */}
           <div className="mb-6">
             <h3 className="text-2xl font-bold text-white mb-2">Launch Token</h3>

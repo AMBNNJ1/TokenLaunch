@@ -4,6 +4,8 @@ import { Suspense, useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { TweetFeed } from '@/components/tweet/TweetFeed';
 import { TokenLaunchModal } from '@/components/tweet/TokenLaunchModal';
+import { Features } from '@/components/Features';
+import { HowItWorks } from '@/components/HowItWorks';
 import { EnrichedTweet } from '@/types/twitter'; // Changed Tweet to EnrichedTweet
 
 export default function Home() {
@@ -27,7 +29,7 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <div className="max-w-3xl mx-auto glass p-8 rounded-2xl relative overflow-hidden">
+        <div className="max-w-5xl mx-auto glass p-8 rounded-2xl relative overflow-hidden">
           <div className="crypto-circuit"> {/* This class was removed in globals.css, consider if it's still needed or if its styles should be merged/re-applied */}
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4 text-white"> {/* Changed to text-white */}
@@ -44,6 +46,10 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* How it works and features sections */}
+      <HowItWorks />
+      <Features />
 
       <TokenLaunchModal
         isOpen={isModalOpen}
