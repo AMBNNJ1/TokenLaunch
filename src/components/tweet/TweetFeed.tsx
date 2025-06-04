@@ -56,7 +56,26 @@ export function TweetFeed({ onTweetSelect, onTweetClick }: TweetFeedProps) {
           token_potential: { name_suggestion: 'Mock Coin', symbol_suggestion: 'MCK' },
           launch_status: 'not_launched'
         },
-        // Add more mock tweets as needed
+        {
+          id: "2",
+          text: "Another spicy take on memecoins going to the moon 🚀",
+          author: mockAuthor,
+          created_at: new Date(Date.now() - 1000000).toISOString(),
+          public_metrics: { ...mockMetrics, like_count: 75, retweet_count: 20 },
+          media: mockMedia,
+          token_potential: { name_suggestion: 'Spice Coin', symbol_suggestion: 'SPICE' },
+          launch_status: 'not_launched'
+        },
+        {
+          id: "3",
+          text: "Who else is farming airdrops this season? #airdrops",
+          author: mockAuthor,
+          created_at: new Date(Date.now() - 2000000).toISOString(),
+          public_metrics: { ...mockMetrics, like_count: 55, retweet_count: 15 },
+          media: mockMedia,
+          token_potential: { name_suggestion: 'Airdrop Coin', symbol_suggestion: 'DROP' },
+          launch_status: 'not_launched'
+        },
       ]);
       setLoading(false);
       setRefreshing(false);
