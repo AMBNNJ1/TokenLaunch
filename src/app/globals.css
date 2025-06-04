@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Simple Theme */
+:root {
+  --bg-color: #000000; /* Black background */
+  --text-color: #ffffff; /* White text */
+  --button-bg-color: #ffffff; /* White button background */
+  --button-text-color: #000000; /* Black button text */
+  --card-bg-color: #333333; /* Grey card background */
+  --card-border-color: #444444; /* Darker grey for card border */
+}
+
+/* Global Background */
+body {
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+/* Card Styles - keeping for other components that might use it */
+.card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--card-border-color);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+}
+
+/* Custom styles for wallet adapter */
+.wallet-adapter-button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem; /* Adjusted padding */
+  border-radius: 8px; /* Consistent with other elements */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: 1px solid var(--button-bg-color); /* Ensure border matches bg for solid look */
+}
+
+.wallet-adapter-button:hover {
+  background-color: #f0f0f0; /* Slightly darker white on hover */
+  color: var(--button-text-color);
+}
+
+.wallet-adapter-button-trigger {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+}
+
+.wallet-adapter-modal-wrapper {
+  backdrop-filter: blur(5px); /* Reduced blur for subtlety */
+  -webkit-backdrop-filter: blur(5px); /* Added for Safari compatibility */
+  background-color: rgba(0, 0, 0, 0.5); /* Darker overlay */
+}
+
+.wallet-adapter-modal {
+  background-color: var(--card-bg-color); /* Use card background for modal */
+  border: 1px solid var(--card-border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.wallet-adapter-modal-title {
+  color: var(--text-color);
+  font-size: 1.25rem; /* Adjusted size */
+  font-weight: bold;
+}
+
+.wallet-adapter-modal-list {
+  @apply space-y-2; /* Reduced spacing */
+}
+
+.wallet-adapter-modal-list-item {
+  background-color: #444444; /* Slightly lighter grey for list items */
+  color: var(--text-color);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+  border: 1px solid #555555;
+}
+
+.wallet-adapter-modal-list-item:hover {
+  background-color: #555555; /* Darken on hover */
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px; /* Thinner scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: var(--card-bg-color); /* Match card background */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #666666; /* Medium grey for thumb */
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #888888; /* Lighter grey on hover */
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 { /* Added h5, h6 */
+  font-weight: 600; /* Semi-bold for modern feel */
+  letter-spacing: -0.025em; /* Tighter letter spacing */
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 2.5rem; /* Adjusted sizes */
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border: 1px solid var(--button-bg-color);
+}
+
+.btn-primary:hover {
+  background-color: #f0f0f0; /* Slightly darker white on hover */
+  color: var(--button-text-color);
+}
+
+/* Remove unused animations and patterns */
+/*
+@keyframes crypto-pulse { ... }
+.animate-crypto-pulse { ... }
+.crypto-circuit::before { ... }
+.gradient-crypto-primary { ... }
+.gradient-crypto-secondary { ... }
+*/
