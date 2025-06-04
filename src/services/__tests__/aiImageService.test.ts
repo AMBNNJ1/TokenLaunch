@@ -15,7 +15,8 @@ describe('AIImageService', () => {
   });
 
   it('should generate an image URL when API key is configured', async () => {
-    // Mock the fetch function
+    // Provide a dummy API key and mock fetch
+    process.env.NEXT_PUBLIC_OPENAI_API_KEY = 'test-key';
     global.fetch = jest.fn().mockResolvedValue({
       ok: true,
       json: () => Promise.resolve({
@@ -24,6 +25,9 @@ describe('AIImageService', () => {
     });
 
     const result = await aiImageService.generateMemecoinImage(mockTweet);
+
+    // Reset the env variable so other tests can modify it
+    process.env.NEXT_PUBLIC_OPENAI_API_KEY = undefined;
     
     expect(result.success).toBe(true);
     expect(result.imageUrl).toBe('https://example.com/generated-image.jpg');
@@ -45,7 +49,8 @@ describe('AIImageService', () => {
   });
 
   it('should handle API errors gracefully', async () => {
-    // Mock a failed API response
+    // Provide a dummy API key so fetch is called and mock a failed response
+    process.env.NEXT_PUBLIC_OPENAI_API_KEY = 'test-key';
     global.fetch = jest.fn().mockResolvedValue({
       ok: false,
       status: 429,
@@ -56,6 +61,8 @@ describe('AIImageService', () => {
     });
 
     const result = await aiImageService.generateMemecoinImage(mockTweet);
+
+    process.env.NEXT_PUBLIC_OPENAI_API_KEY = undefined;
     
     expect(result.success).toBe(false);
     expect(result.error).toContain('Rate limit exceeded');
