@@ -12,7 +12,7 @@ export interface PumpToken {
   timestamp: string;
 }
 
-const API_URL = 'https://pumpportal.fun/api/v1/tokens/recent?limit=20';
+const API_URL = '/api/pumpfun';
 
 export function usePumpTokens(): [PumpToken[], boolean] {
   const [tokens, setTokens] = useState<PumpToken[]>([]);
@@ -23,7 +23,7 @@ export function usePumpTokens(): [PumpToken[], boolean] {
 
     const fetchTokens = async () => {
       try {
-        const res = await fetch(API_URL, { signal: controller.signal });
+        const res = await fetch(`${API_URL}?limit=20`, { signal: controller.signal });
         const data = await res.json();
         const list: PumpToken[] = data.tokens || data;
         setTokens((prev) => {
@@ -34,6 +34,15 @@ export function usePumpTokens(): [PumpToken[], boolean] {
       } catch (err) {
         if (controller.signal.aborted) return;
         console.error('Failed to fetch pump tokens', err);
+        try {
+          const res = await fetch('/api/pumpfun');
+          if (res.ok) {
+            const data = await res.json();
+            setTokens(data.tokens);
+          }
+        } catch (e) {
+          console.error('Fallback pumpfun request failed', e);
+        }
       } finally {
         setIsLoading(false);
       }
