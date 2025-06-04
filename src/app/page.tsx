@@ -2,7 +2,7 @@
 
 import { Suspense, useState } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import { TweetFeed } from '@/components/tweet/TweetFeed';
+import { TokenFeed } from '@/components/TokenFeed';
 import { TokenLaunchModal } from '@/components/tweet/TokenLaunchModal';
 import { Features } from '@/components/Features';
 import { HowItWorks } from '@/components/HowItWorks';
@@ -40,8 +40,8 @@ export default function Home() {
               </p>
             </div>
 
-            <Suspense fallback={<div className="text-center glass p-6 rounded-xl">Loading tweets...</div>}>
-              <TweetFeed onTweetSelect={handleTweetSelect} />
+            <Suspense fallback={<div className="text-center glass p-6 rounded-xl">Loading tokens...</div>}>
+              <TokenFeed />
             </Suspense>
           </div>
         </div>

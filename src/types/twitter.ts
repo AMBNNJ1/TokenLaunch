@@ -27,6 +27,19 @@ export interface TokenPotential {
   symbol_suggestion: string;
 }
 
+export interface FavoriteCreator {
+  id: string;
+  username: string;
+  name: string;
+  profile_image_url?: string;
+  description?: string;
+  verified?: boolean;
+  category?: string;
+  added_at?: string;
+  is_active?: boolean;
+  priority?: number;
+}
+
 export type LaunchStatus = 'not_launched' | 'launched' | 'launching' | 'failed';
 
 // Original Tweet interface - can be kept for basic tweet data
