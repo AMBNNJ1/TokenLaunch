@@ -1,7 +1,9 @@
 /**
  * AI Image Generation Service
  * Handles OpenAI DALL-E API calls for generating memecoin images
- */
+*/
+
+import { getOpenAIApiKey } from '@/config/constants';
 
 export interface ImageGenerationResult {
   success: boolean;
@@ -14,9 +16,7 @@ class AIImageService {
   private baseUrl = 'https://api.openai.com/v1/images/generations';
   
   private getApiKey(): string | null {
-    // Try different ways to access the API key
-    const key = 
-      process.env.NEXT_PUBLIC_OPENAI_API_KEY ||
+    const key = getOpenAIApiKey() ||
       (typeof window !== 'undefined' ? window.__NEXT_DATA__?.props?.pageProps?.env?.NEXT_PUBLIC_OPENAI_API_KEY : null);
     
     if (this.debug) {

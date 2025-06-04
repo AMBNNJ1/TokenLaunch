@@ -126,11 +126,13 @@ export function TokenLaunchModal({ isOpen, onClose }: TokenLaunchModalProps) {
     setIsCreating(true);
 
     try {
-      // TODO: Implement token creation logic
       console.log('Creating token with data:', { tokenBasics, liquidityData });
-
-      // Simulate creation process
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      // Placeholder for actual token creation. Replace with API call or
+      // smart contract interaction when available.
+      const createToken = async () => {
+        return new Promise(resolve => setTimeout(resolve, 2000));
+      };
+      await createToken();
 
       // Close modal on success
       onClose();
