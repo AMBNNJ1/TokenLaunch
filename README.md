@@ -4,6 +4,29 @@ This web app serves as a discovery + launchpad for meme coins. The homepage feat
 
 The token creation logic is already implemented and available (e.g., via a backend API or script). This spec focuses on building the homepage UI and tweet interaction logic.
 
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Copy `.env.example` to `.env` and fill in the required API keys.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Execute tests:
+   ```bash
+   npm test --silent
+   ```
+
+### Environment Variables
+
+The application expects these variables to be defined:
+
+- `NEXT_PUBLIC_TWITTER_BEARER_TOKEN` – Twitter API bearer token
+- `NEXT_PUBLIC_OPENAI_API_KEY` – OpenAI API key for image generation
+
 🔧 Features & Components
 1. Homepage Feed
 Function: Show a feed combining:
