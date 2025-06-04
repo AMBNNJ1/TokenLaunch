@@ -75,3 +75,6 @@ This web app serves as a discovery + launchpad for meme coins...
 2. Search codebase for "cross-chain" references
 3. Verify app builds without errors
 4. Test core tweet-to-token flow
+
+This implementation plan provides a high-level roadmap for removing the old
+cross-chain functionality and focusing the app on launching tokens from tweets.

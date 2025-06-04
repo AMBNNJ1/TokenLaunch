@@ -3,15 +3,16 @@
  * Handles all Twitter API interactions for Tweet-Powered Raydium Coin Launcher
  */
 
-import { 
-  TwitterApiResponse, 
-  TwitterSearchParams, 
-  EnrichedTweet, 
+import {
+  TwitterApiResponse,
+  TwitterSearchParams,
+  EnrichedTweet,
   FavoriteCreator,
   TwitterApiError,
   MockTweetData,
   TwitterMedia
 } from '@/types/twitter';
+import { getTwitterBearerToken } from '@/config/constants';
 
 class TwitterApiService {
   private bearerToken: string | null = null;
@@ -19,7 +20,7 @@ class TwitterApiService {
   private useMockData = false; // Force real API usage
 
   constructor() {
-    this.bearerToken = process.env.NEXT_PUBLIC_TWITTER_BEARER_TOKEN || null;
+    this.bearerToken = getTwitterBearerToken() || null;
     console.log('Twitter API initialized:', {
       hasToken: !!this.bearerToken,
       tokenLength: this.bearerToken?.length || 0,
