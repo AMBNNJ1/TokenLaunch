@@ -7,6 +7,16 @@ jest.mock('@solana/wallet-adapter-react-ui', () => ({
   WalletMultiButton: () => <button>Select Wallet</button>
 }));
 
+jest.mock('../../hooks/usePumpTokens', () => ({
+  usePumpTokens: () => ([[
+    {
+      address: 'ABC123',
+      timestamp: new Date().toISOString(),
+      metadata: { name: 'MockToken', symbol: 'MOCK' }
+    }
+  ], false])
+}));
+
 describe('Home Page', () => {
   it('renders the main heading', () => {
     render(<Home />);
@@ -18,5 +28,11 @@ describe('Home Page', () => {
     render(<Home />);
     const button = screen.getByText(/Select Wallet/i);
     expect(button).toBeInTheDocument();
+  });
+
+  it('renders at least one pump token and no Tweets', () => {
+    render(<Home />);
+    expect(screen.getByText('MockToken')).toBeInTheDocument();
+    expect(screen.queryByText(/Show Mock Tweets/i)).toBeNull();
   });
 });

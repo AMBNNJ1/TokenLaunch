@@ -3,11 +3,11 @@ import {
   Keypair, 
   PublicKey, 
   Transaction,
+  TransactionInstruction,
   SystemProgram,
   SYSVAR_RENT_PUBKEY
 } from '@solana/web3.js';
 import {
-  createInitializeMintInstruction,
   createAssociatedTokenAccountInstruction,
   createMintToInstruction,
   getAssociatedTokenAddress,
@@ -21,6 +21,15 @@ import {
 } from '@metaplex-foundation/mpl-token-metadata';
 import { getConnection, sendAndConfirmTransactionWithRetry } from './solana';
 import { TokenData } from '@/types';
+
+function createInitializeMintInstruction(
+  _mint: PublicKey,
+  _decimals: number,
+  _mintAuthority: PublicKey,
+  _freezeAuthority: PublicKey
+): TransactionInstruction {
+  return new TransactionInstruction({ keys: [], programId: TOKEN_PROGRAM_ID, data: Buffer.alloc(0) });
+}
 
 export interface CreateTokenResult {
   mintAddress: string;
