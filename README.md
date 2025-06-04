@@ -26,6 +26,7 @@ The application expects these variables to be defined:
 
 - `NEXT_PUBLIC_TWITTER_BEARER_TOKEN` – Twitter API bearer token
 - `NEXT_PUBLIC_OPENAI_API_KEY` – OpenAI API key for image generation
+- `NEXT_PUBLIC_BITQUERY_KEY` – Bitquery API key for Pump.fun data
 
 🔧 Features & Components
 1. Homepage Feed
