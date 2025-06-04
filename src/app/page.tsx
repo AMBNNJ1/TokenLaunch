@@ -29,7 +29,7 @@ export default function Home() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <div className="max-w-3xl mx-auto glass p-8 rounded-2xl relative overflow-hidden">
+        <div className="max-w-5xl mx-auto glass p-8 rounded-2xl relative overflow-hidden">
           <div className="crypto-circuit"> {/* This class was removed in globals.css, consider if it's still needed or if its styles should be merged/re-applied */}
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-4 text-white"> {/* Changed to text-white */}

@@ -9,12 +9,12 @@ interface FeatureProps {
 
 function FeatureCard({ icon, title, description, gradient }: FeatureProps) {
   return (
-    <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+    <div className="group relative bg-gray-900/70 border border-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       <div className={`w-16 h-16 ${gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
         {icon}
       </div>
-      <h3 className="text-xl font-bold text-gray-900 mb-4">{title}</h3>
-      <p className="text-gray-600 leading-relaxed">{description}</p>
+      <h3 className="text-xl font-bold text-white mb-4">{title}</h3>
+      <p className="text-gray-300 leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -84,19 +84,19 @@ export function Features() {
   ];
 
   return (
-    <section id="features" className="bg-gray-50 py-20 lg:py-28">
+    <section id="features" className="bg-black py-20 lg:py-28">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Everything You Need to
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 {" "}Launch Successfully
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              From token creation to DEX listing, we provide all the tools you need 
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              From token creation to DEX listing, we provide all the tools you need
               to launch your project on Solana with confidence.
             </p>
           </div>
@@ -123,7 +123,7 @@ export function Features() {
               </p>
               <a
                 href="#launch"
-                className="inline-block bg-white text-purple-600 font-semibold px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors duration-300"
+                className="inline-block bg-gray-900 text-white font-semibold px-8 py-4 rounded-xl hover:bg-gray-800 transition-colors duration-300"
               >
                 Get Started Now →
               </a>
