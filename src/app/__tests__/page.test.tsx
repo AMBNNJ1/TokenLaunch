@@ -1,5 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import Home from '../page';
+// Avoid ESM issues with Next.js by requiring the page dynamically
+const Home = require('../page').default;
+
+// Mock heavy wallet adapter modules to avoid ESM issues
+jest.mock('@solana/wallet-adapter-react-ui', () => ({
+  WalletMultiButton: () => <button>Select Wallet</button>
+}));
 
 describe('Home Page', () => {
   it('renders the main heading', () => {
