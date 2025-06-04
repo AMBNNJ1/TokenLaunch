@@ -3,6 +3,7 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import { SOLANA_NETWORK } from '@/lib/constants';
 import WalletButton from './common/WalletButton';
+import ThemeToggle from './ThemeToggle';
 
 export function Header() {
   const { connected } = useWallet();
@@ -47,6 +48,7 @@ export function Header() {
 
           {/* Wallet Section */}
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <WalletButton />
           </div>
         </div>
